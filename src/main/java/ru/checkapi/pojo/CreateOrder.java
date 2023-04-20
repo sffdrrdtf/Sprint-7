@@ -2,7 +2,6 @@ package ru.checkapi.pojo;
 
 import java.util.List;
 public class CreateOrder {
-    private List<String> color;
     private String firstName;
     private String lastName;
     private String address;
@@ -11,6 +10,7 @@ public class CreateOrder {
     private int rentTime;
     private String deliveryDate;
     private String comment;
+    private List<String> color;
 
     public CreateOrder() {
     }

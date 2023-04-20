@@ -3,3 +3,4 @@ ru\checkapi\data\GeneratorCourier.class
 ru\checkapi\pojo\CourierCreds.class
 ru\checkapi\pojo\CreateOrder.class
 ru\checkapi\pojo\CreateCourier.class
+ru\checkapi\order\listOrder.class
