@@ -1,6 +1,6 @@
 ru\checkapi\client\CourierClient.class
 ru\checkapi\data\GeneratorCourier.class
+ru\checkapi\order\ListOrder.class
 ru\checkapi\pojo\CourierCreds.class
 ru\checkapi\pojo\CreateOrder.class
 ru\checkapi\pojo\CreateCourier.class
-ru\checkapi\order\listOrder.class

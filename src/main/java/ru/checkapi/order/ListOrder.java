@@ -5,8 +5,8 @@ import ru.checkapi.pojo.CreateOrder;
 import static io.restassured.RestAssured.given;
 import static ru.checkapi.client.CourierClient.PATH_ORDER;
 
-public class listOrder {
-    public ValidatableResponse requestCreateLoginWithoutFieldPassword(CreateOrder order) {
+public class ListOrder {
+    public ValidatableResponse requestGetListOrders(CreateOrder order) {
         return given()
                 .contentType(ContentType.JSON)
                 .and()

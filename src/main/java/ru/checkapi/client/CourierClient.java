@@ -28,37 +28,8 @@ public class CourierClient {
                 .post(PATH)
                 .then();
     }
-    @Step("Создание курьера с тем же логином и паролем")
-    public ValidatableResponse requestCreateCourierInSystem(CreateCourier courier) {
-        return given()
-                .contentType(ContentType.JSON)
-                .and()
-                .body(courier)
-                .when()
-                .post(PATH)
-                .then();
-    }
-    @Step("Создание курьера без пароля")
-    public ValidatableResponse requestCreateWithoutLoginOrPassword(CreateCourier courier) {
-        return given()
-                .contentType(ContentType.JSON)
-                .and()
-                .body(courier)
-                .when()
-                .post(PATH)
-                .then();
-    }
-    @Step("Создание курьера без поля пароля")
-    public ValidatableResponse requestCreateWithoutFieldPassword(CreateCourier courier) {
-        return given()
-                .contentType(ContentType.JSON)
-                .and()
-                .body(courier)
-                .when()
-                .post(PATH)
-                .then();
-    }
-    @Step("Создание логина курьера в системе")
+
+    @Step("Создание логин курьера в системе")
     public ValidatableResponse requestCreateLogin(CourierCreds creds) {
         return given()
                 .contentType(ContentType.JSON)
@@ -68,8 +39,8 @@ public class CourierClient {
                 .post(LOGIN_PATH)
                 .then();
     }
-    @Step("Создание логина курьера в системе без пароль")
-    public ValidatableResponse requestCreateLoginWithoutLoginOrPassword(CreateCourier courier) {
+    @Step("Создание логин курьера в системе без пароль")
+    public ValidatableResponse requestCreateLoginInSystem(CreateCourier courier) {
         return given()
                 .contentType(ContentType.JSON)
                 .and()
@@ -78,26 +49,7 @@ public class CourierClient {
                 .post(LOGIN_PATH)
                 .then();
     }
-    @Step("Создание логина курьера в системе с несуществующим парой логин/пароль")
-    public ValidatableResponse requestCreateLoginWithNonExistentLoginPassword(CreateCourier courier) {
-        return given()
-                .contentType(ContentType.JSON)
-                .and()
-                .body(courier)
-                .when()
-                .post(LOGIN_PATH)
-                .then();
-    }
-    @Step("Создание логина курьера в системе без поля пароль")
-    public ValidatableResponse requestCreateLoginWithoutFieldPassword(CreateCourier courier) {
-        return given()
-                .contentType(ContentType.JSON)
-                .and()
-                .body(courier)
-                .when()
-                .post(LOGIN_PATH)
-                .then();
-    }
+
     @Step("Удаление id курьера")
     public void courierDelete(String courierId) {
         given()

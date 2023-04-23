@@ -20,7 +20,7 @@ public class ListOrdersTest {
     @Test
     @DisplayName("Получение списка заказов: эндпоинт /api/v1/orders")
     @Description("Проверка ожидаемого результата: statusCode и body")
-    public void listOrdersTest() {
+    public void getListOrdersTest() {
       Response response = given()
                 .get(PATH_ORDER);
      response .then().assertThat().body("$", Matchers.allOf(

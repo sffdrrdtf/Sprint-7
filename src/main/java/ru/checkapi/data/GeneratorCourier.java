@@ -11,12 +11,7 @@ public class GeneratorCourier {
                 .setPassword(faker.number().digits(4))
                 .setFirstName((faker.name().firstName()));
     }
-    public static CreateCourier randomCreateCourierInSystem() {
-        return new CreateCourier()
-                .setLogin(faker.funnyName().name())
-                .setPassword(faker.number().digits(5))
-                .setFirstName((faker.name().firstName()));
-    }
+
     public static CreateCourier randomCreateCourierWithoutPassword() {
         return new CreateCourier()
                 .setLogin(faker.funnyName().name())

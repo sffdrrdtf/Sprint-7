@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.checkapi.order.listOrder;
+import ru.checkapi.order.ListOrder;
 import ru.checkapi.pojo.CreateOrder;
 import java.util.List;
 import static ru.checkapi.client.CourierClient.BASE_URI;
@@ -20,7 +20,7 @@ public class CreateOrderTest {
 
     private final List<String> color;
     private int trackId;
-    listOrder orderApi = new  listOrder();
+    ListOrder orderApi = new ListOrder();
     public CreateOrderTest(List<String> color) {
         this.color = color;
     }
@@ -45,7 +45,7 @@ public class CreateOrderTest {
     @Description("Проверка, что можно создать заказ на: серый цвет, черный цвет, выбор двух цветов, без выбора цвета")
     public void paramCreateOrderTest() {
         CreateOrder order = new CreateOrder ("Виктор", "Иванов", "Ижорская, 10", "4", "6800188888", 4, "2023-10-11", "Доставить самокат после 3 часов дня", color);
-        ValidatableResponse response = orderApi.requestCreateLoginWithoutFieldPassword(order);
+        ValidatableResponse response = orderApi.requestGetListOrders(order);
         trackId = response.extract().path("track");
         response.assertThat().body("$", Matchers.allOf(Matchers.hasKey("track")))
                 .statusCode(HttpStatus.SC_CREATED);
